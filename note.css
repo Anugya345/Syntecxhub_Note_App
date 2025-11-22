@@ -1,0 +1,240 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    min-height: 100vh;
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#addNote{
+    width: 200px;
+    height: 180px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 2rem;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#addNote:hover {
+    background-color: #f9f9f9;
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.myNote{
+    width: 200px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.myNote:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.myNote p{
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.note{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+.newNotes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+.myNote .editBtn{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: 50px;
+    height: 24px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.myNote .editBtn:hover {
+    background-color: #45a049;
+}
+
+.myNote .deleteBtn{
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    width: 60px;
+    height: 24px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.myNote .deleteBtn:hover {
+    background-color: #ff5252;
+}
+.addForm{
+    display: none;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.addForm input{
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.addForm input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.inputs{
+    margin-bottom: 1.5rem;
+}
+
+textarea{
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    border-radius: 6px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.inputs p{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+#addBtn{
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#addBtn:hover {
+    transform: translateY(-2px);
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.head button{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+    padding: 0.25rem;
+    border-radius: 4px;
+}
+
+.head button:hover {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    #addNote, .myNote {
+        width: calc(100% - 2rem);
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .note, .newNotes {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .addForm {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .head h2 {
+        font-size: 1.5rem;
+    }
+}
+
+

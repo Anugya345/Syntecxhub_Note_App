@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="note.css">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="note">
+            <div class="btn">
+                <button id="addNote">
+                    <i class="fa-regular fa-square-plus"></i>
+                    <br>
+                    Add Note
+
+                </button>
+            </div>
+            <div class="newNote"></div>
+        </div>
+        <div class="addForm">
+            <div class="head">
+                <h2 id="formTitle">Add a Note</h2>
+                <button class="icon"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="inputs">
+                <p>Title</p>
+                <input type="text"  id="title" value="">
+            </div>
+            <div class="input">
+                <p>Description</p>
+                <textarea rows="5px" cols="30" id="discription"></textarea>
+            </div>
+            <button id="addBtn">Add Note</button>
+        </div>
+    </div>
+    <script src="note.js"></script>
+</body>
+</html>
